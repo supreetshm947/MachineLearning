@@ -20,4 +20,9 @@ def plot(x,y,bias, weight):
 
 x, y = np.loadtxt("lc_train_data.dat"), np.loadtxt("lc_train_label.dat")
 b, w = leastsquares(x, y)
+
 plot(x,y, b, w)
+plt.savefig("least_classifier_train.png")
+x_test, y_test = np.loadtxt("lc_test_data.dat"), np.loadtxt("lc_test_label.dat")
+plot(x_test,y_test, b, w)
+plt.savefig("least_classifier_test.png")
